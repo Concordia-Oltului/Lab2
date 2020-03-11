@@ -5,22 +5,32 @@ using namespace std;
 
 class Complex {
 private:
-	double parte_reala, parte_fractionara;
+	double real_part, imaginary_part;
 public:
 	//constructor implicit
 	Complex();
 
+	//constructor explicit
+	Complex(double real, double img);
+
 	//constructor de copiere
-	Complex(const Complex&);
+	Complex(const Complex& c);
 
 	//functia de copiere
-	Complex operator= (Complex c);
+	Complex operator= (const Complex& c);
+
+	//Returns real_part of the complex number 
+	double get_real_part();
+
+	//Returns imaginary_part of the complex number 
+	double get_imaginary_part();
+
 
 	//returneaza ceva
-	double show_comp();
+	void show_comp();
 
 	//returneaza ceva
-	double show_exp();
+	void show_exp();
 
 	//Face adunarea
 	Complex operator+ (Complex c);
