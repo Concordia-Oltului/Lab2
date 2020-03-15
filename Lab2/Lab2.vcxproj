@@ -155,6 +155,9 @@
     <ClInclude Include="Complex.h" />
     <ClInclude Include="Complex_test.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="int.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

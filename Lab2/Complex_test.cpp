@@ -17,6 +17,18 @@ void test_constructor() {
     assert(a.get_imaginary_part() == 3);
 }
 
+void test_add() {
+    //@author: Stefan
+    Complex a(3, 6), b(-3, 9.3);
+    Complex rez = a + a;
+    assert(rez.get_real_part() == 6);
+    assert(rez.get_imaginary_part() == 12);
+    rez = a + b;
+    assert(rez.get_real_part() == 0);
+    assert(rez.get_imaginary_part() == 15.3);
+
+}
+
 void test_division() {
     //@author: Stefan
     Complex a(3, 6), b(3, 9);
@@ -43,5 +55,7 @@ void test_abs() {
 
 void run_all_tests() {
     test_constructor();
+    test_add();
     test_division();
+    test_abs();
 }

@@ -47,6 +47,22 @@ double Complex::get_imaginary_part() {
 	return imaginary_part;
 }
 
+Complex Complex::operator+(Complex c) {
+	/*
+	Adds 2 complex elements and returns the result
+	Input:
+		c - Complex
+	Output:
+		Complex
+
+	@author: Stefan
+	*/
+	Complex rez;
+	rez.real_part = real_part + c.real_part;
+	rez.imaginary_part = imaginary_part + c.imaginary_part;
+	return rez;
+}
+
 Complex Complex::operator/(Complex c) {
 	/*
 	Divides 2 complex elements and returns the result
