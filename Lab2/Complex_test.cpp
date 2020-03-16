@@ -53,9 +53,21 @@ void test_abs() {
     assert(abs_rez == 1);
 }
 
+void test_computepolar() {
+	Complex a(5, 2);
+	a.compute_polar();
+	assert(a.get_theta == 1.380506);
+	assert(a.get_r == 5.38516);
+}
+
+void test_showcomp() {
+	//pass
+}
+
 void run_all_tests() {
     test_constructor();
     test_add();
     test_division();
     test_abs();
+	test_computepolar();
 }

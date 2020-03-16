@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cmath>
 #include <string>
+#include <stdio.h>
 
 using namespace std;
 
@@ -151,7 +152,9 @@ void Complex::compute_polar() {
 
 string Complex::show_comp() {
 	// @author: Victor
-	
+	char buffer[50];
+	sprintf(buffer, "z = %f + %fi", real_part, imaginary_part);
+	return buffer;
 }
 
 

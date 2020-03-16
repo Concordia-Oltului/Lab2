@@ -36,10 +36,10 @@ public:
 	string show_comp();
 
 	//returneaza forma exponentiala
-	string show_exp();
+	char show_exp();
 
 	//returneaza forma polara
-	string show_polar();
+	char show_polar();
 
 	//Face adunarea
 	Complex operator+ (Complex c);
