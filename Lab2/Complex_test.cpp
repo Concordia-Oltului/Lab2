@@ -57,7 +57,7 @@ void test_computepolar() {
     // @author: Victor
 	Complex a(3, 4);
 	a.compute_polar();
-    double r = a.get_r(), theta = a.get_theta();
+    double r = a.abs(), theta = a.compute_polar();
     assert(r == 5);
 }
 

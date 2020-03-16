@@ -5,7 +5,7 @@ using namespace std;
 
 class Complex {
 private:
-	double real_part, imaginary_part, theta, r;
+	double real_part, imaginary_part;
 public:
 	//constructor implicit
 	Complex();
@@ -24,13 +24,6 @@ public:
 
 	//Returns imaginary_part of the complex number 
 	double get_imaginary_part();
-
-	//Returns the vector length of the complex number's polar form
-	double get_r();
-
-	//Returns the theta angle of the complex number's polar form
-	double get_theta();
-
 
 	//returneaza forma algebrica
 	char* show_comp();
@@ -54,7 +47,7 @@ public:
 	double abs();
 
 	//forma polara
-	void compute_polar();
+	double compute_polar();
 
 
 	//destructor
