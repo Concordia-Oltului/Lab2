@@ -1,11 +1,11 @@
 #pragma once
+#include <string>
+
 using namespace std;
-
-
 
 class Complex {
 private:
-	double real_part, imaginary_part;
+	double real_part, imaginary_part, theta, r;
 public:
 	//constructor implicit
 	Complex();
@@ -25,12 +25,21 @@ public:
 	//Returns imaginary_part of the complex number 
 	double get_imaginary_part();
 
+	//Returns the vector length of the complex number's polar form
+	double get_r();
 
-	//returneaza ceva
-	void show_comp();
+	//Returns the theta angle of the complex number's polar form
+	double get_theta();
 
-	//returneaza ceva
-	void show_exp();
+
+	//returneaza forma algebrica
+	string show_comp();
+
+	//returneaza forma exponentiala
+	string show_exp();
+
+	//returneaza forma polara
+	string show_polar();
 
 	//Face adunarea
 	Complex operator+ (Complex c);
@@ -44,7 +53,8 @@ public:
 	//ABS
 	double abs();
 
-	//De adaugat polar form
+	//forma polara
+	void compute_polar();
 
 
 	//destructor

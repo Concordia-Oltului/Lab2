@@ -1,25 +1,39 @@
 #include "Complex.h"
 #include <iostream>
 #include <cmath>
+#include <string>
 
 using namespace std;
+
+//changes - added theta & r in constructors; added PI definition; added compute_polar; added theta & r getters; show_comp, show_exp definition
+
+#define PI 3.14159265
 
 Complex::Complex(){
 	// @author: Stefan
 	real_part = 0;
 	imaginary_part = 0;
+	r = 0;
+	theta = 0;
 };
 
 Complex::Complex(double real, double img){
 	// @author: Stefan
 	real_part = real;
 	imaginary_part = img;
+	r = 0;
+	theta = 0;
 };
 
 Complex::Complex(const Complex& c) {
 	// @author: Stefan
 	real_part = c.real_part;
 	imaginary_part = c.imaginary_part;
+	if (c.r != 0)
+	{
+		r = c.r;
+		theta = c.theta;
+	}
 }
 
 Complex Complex::operator= (const Complex& c) {
@@ -34,6 +48,11 @@ Complex Complex::operator= (const Complex& c) {
 	*/
 	real_part = c.real_part;
 	imaginary_part = c.imaginary_part;
+	if (c.r != 0)
+	{
+		r = c.r;
+		theta = c.theta;
+	}
 	return *this;
 }
 
@@ -45,6 +64,16 @@ double Complex::get_real_part() {
 double Complex::get_imaginary_part() {
 	// @author: Stefan
 	return imaginary_part;
+}
+
+double Complex::get_r() {
+	// @author: Victor
+	return r;
+}
+
+double Complex::get_theta() {
+	// @author: Victor
+	return theta;
 }
 
 Complex Complex::operator+(Complex c) {
@@ -101,9 +130,29 @@ double Complex::abs() {
 }
 
 
+void Complex::compute_polar() {
+	/*
+	Computes the polar form arguments of a complex number
+	Input:
+		-
+	Output:
+		-
+	@author: Victor
+	*/
+	r = abs();
+	if (real_part > 0)
+	{
+		theta = atan(imaginary_part / real_part);
+	}
+	else
+		theta = atan(imaginary_part / real_part) + PI;
+}
 
 
-
+string Complex::show_comp() {
+	// @author: Victor
+	
+}
 
 
 Complex::~Complex() {
