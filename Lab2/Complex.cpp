@@ -150,10 +150,24 @@ void Complex::compute_polar() {
 }
 
 
-string Complex::show_comp() {
+char* Complex::show_comp() {
 	// @author: Victor
-	char buffer[50];
-	sprintf(buffer, "z = %f + %fi", real_part, imaginary_part);
+	char* buffer = new char[50];
+	sprintf(buffer, "z = %.2f + %.2fi", real_part, imaginary_part);
+	return buffer;
+}
+
+char* Complex::show_exp() {
+	// @author: Victor
+	char* buffer = new char[50];
+	sprintf(buffer, "z = %.2f * e ^ (i*%.2f)", r, theta);
+	return buffer;
+}
+
+char* Complex::show_polar() {
+	// @author: Victor
+	char* buffer = new char[50];
+	sprintf(buffer, "z = %.2f(cos(%.2f) + isin(%.2f))", r, theta, theta);
 	return buffer;
 }
 

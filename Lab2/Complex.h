@@ -33,13 +33,13 @@ public:
 
 
 	//returneaza forma algebrica
-	string show_comp();
+	char* show_comp();
 
 	//returneaza forma exponentiala
-	char show_exp();
+	char* show_exp();
 
 	//returneaza forma polara
-	char show_polar();
+	char* show_polar();
 
 	//Face adunarea
 	Complex operator+ (Complex c);

@@ -54,14 +54,34 @@ void test_abs() {
 }
 
 void test_computepolar() {
-	Complex a(5, 2);
+    // @author: Victor
+	Complex a(3, 4);
 	a.compute_polar();
-	assert(a.get_theta == 1.380506);
-	assert(a.get_r == 5.38516);
+    double r = a.get_r(), theta = a.get_theta();
+    assert(r == 5);
 }
 
 void test_showcomp() {
-	//pass
+    // @author: Victor
+    Complex a(5, 2);
+    char* buff = a.show_comp();
+    assert(buff != NULL);
+}
+
+void test_showexp() {
+    // @author: Victor
+    Complex a(5, 2);
+    a.compute_polar();
+    char* buff = a.show_exp();
+    assert(buff != NULL);
+}
+
+void test_showpolar() {
+    // @author: Victor
+    Complex a(5, 2);
+    a.compute_polar();
+    char* buff = a.show_polar();
+    assert(buff != NULL);
 }
 
 void run_all_tests() {
@@ -70,4 +90,7 @@ void run_all_tests() {
     test_division();
     test_abs();
 	test_computepolar();
+    test_showcomp();
+    test_showexp();
+    test_showpolar();
 }
